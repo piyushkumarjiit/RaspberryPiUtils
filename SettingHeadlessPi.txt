@@ -1,0 +1,21 @@
+#Enabling SSH in Headless PI
+To enable SSH, you need to place an empty file named ssh (no extension) in the root of the boot disk.
+Or use window command prompt-->CD to the boot drive of pi (after writing the Noobs/Raspbian image; smalled partition is boot drive)--> Execute type NUL >> ssh--> confirm ssh is created
+You can use Notepad++ to create ssh as well.
+
+#Setting WiFi Info on Headless Pi
+Using Notepad++ (with EOL set for Unix) create a file in the root of boot called: wpa_supplicant.conf
+
+country=US
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid="NETWORK-NAME"
+    psk="NETWORK-PASSWORD"
+}
+
+Once you are able to login to Pi via ssh (default user is pi with a password of raspberry) you can change the password with below commands:
+
+sudo raspi-config
+
