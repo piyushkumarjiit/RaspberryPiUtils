@@ -16,8 +16,8 @@ ssh-keygen
 
 #Copy the Public key generated in previous step to authorized keys file
 cat id_rsa.pub >> authorized_keys
-read -p "Are you configuring SSH for a Router (Yes/No): " ServerType
-if [[ $ServerType == "No"]]
+read -p "Are you configuring SSH for a Router (Yes/No): " Router
+if [[ $Router == "No" ]]
 then
 	#Ask user to provide ServerIP
 	read -p "Please provide server IP address: " ServerIP
